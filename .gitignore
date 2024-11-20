@@ -1,0 +1,18 @@
+.cache/*
+!.cache/.gitkeep
+benchmark/*
+!benchmark/.gitkeep
+qdrant_storage/*
+!qdrant_storage/.gitkeep
+data/chapter5/MapleRepair/*
+!data/chapter5/MapleRepair/.gitkeep
+data/chapter5/generalizability/BIRD Sampled_train/*
+!data/chapter5/generalizability/BIRD Sampled_train/.gitkeep
+data/chapter5/generalizability/SPIDER Sampled_test/*
+!data/chapter5/generalizability/SPIDER Sampled_test/.gitkeep
+sankey/images/*
+sankey/sankey_metadata.json
+!sankey/images/.gitkeep
+results/*
+project.env
+*.pyc
