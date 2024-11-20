@@ -1,0 +1,92 @@
+{
+    "Arith_Ops_Repairer": {
+        "All detection": 0,
+        "TP": 0,
+        "FP": 0,
+        "OVERALL": 0
+    },
+    "Date_Function_Hallucination_Repairer": {
+        "All detection": 0,
+        "TP": 0,
+        "FP": 0,
+        "OVERALL": 0
+    },
+    "Alias_Not_Use_Repairer": {
+        "All detection": 1,
+        "TP": 1,
+        "FP": 0,
+        "OVERALL": 1
+    },
+    "Column_Spell_Error_Repairer": {
+        "All detection": 1,
+        "TP": 1,
+        "FP": 0,
+        "OVERALL": 1
+    },
+    "Missing_Join_Repairer": {
+        "All detection": 2,
+        "TP": 2,
+        "FP": 0,
+        "OVERALL": 2
+    },
+    "Mismatch_TableColumn_Repairer": {
+        "All detection": 65,
+        "TP": 65,
+        "FP": 0,
+        "OVERALL": 65
+    },
+    "Div_Cast_Repairer": {
+        "All detection": 11,
+        "TP": 11,
+        "FP": 0,
+        "OVERALL": 11
+    },
+    "Equal_Repairer": {
+        "All detection": 29,
+        "TP": 18,
+        "FP": 11,
+        "OVERALL": 7
+    },
+    "Null_Value_Repairer": {
+        "All detection": 2,
+        "TP": 2,
+        "FP": 0,
+        "OVERALL": 2
+    },
+    "Date_Time_Format_Repairer": {
+        "All detection": 5,
+        "TP": 2,
+        "FP": 3,
+        "OVERALL": -1
+    },
+    "Inconsistent_Condition_Repairer": {
+        "All detection": 75,
+        "TP": 66,
+        "FP": 9,
+        "OVERALL": 57
+    },
+    "Inconsistent_IN_Repairer": {
+        "All detection": 0,
+        "TP": 0,
+        "FP": 0,
+        "OVERALL": 0
+    },
+    "Inconsistent_Join_Repairer": {
+        "All detection": 2,
+        "TP": 2,
+        "FP": 0,
+        "OVERALL": 2
+    },
+    "Comparison_Repairer": {
+        "All detection": 14,
+        "TP": 9,
+        "FP": 5,
+        "OVERALL": 4
+    },
+    "SUMUP": {
+        "All detection": 207,
+        "TP": 179,
+        "FP": 28,
+        "OVERALL": 151
+    }
+}

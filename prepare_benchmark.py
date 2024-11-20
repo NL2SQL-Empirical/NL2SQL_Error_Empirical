@@ -1,0 +1,1 @@
+# Unzip two benchmarks (BIRD and SPIDER) into benchmark dir and then run this script.
