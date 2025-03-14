@@ -16,10 +16,11 @@ DATASET_DB_PATHS = {
     'TRAIN_BIRD': 'TRAIN_BIRD_DB_ROOT_PATH',
     'DEV_SPIDER': 'DEV_SPIDER_DB_ROOT_PATH',
     'TEST_SPIDER': 'TEST_SPIDER_DB_ROOT_PATH',
+    'DEV_SCIENCE_BENCHMARK': 'DEV_SCI_DB_ROOT_PATH'
 }
 dataset = os.getenv('DATASET')
-if dataset not in ('BIRD', 'SPIDER'):
-    raise ValueError(f"Unsupported dataset! Dataset must be one of {('BIRD', 'SPIDER')}")
+if dataset not in ('BIRD', 'SPIDER', 'SCIENCE_BENCHMARK'):
+    raise ValueError(f"Unsupported dataset! Dataset must be one of {('BIRD', 'SPIDER', 'SCIENCE_BENCHMARK')}")
 data_split = os.getenv('DATA_SPLIT')
 if data_split not in ('TRAIN', 'DEV', 'TEST'):
     raise ValueError(f"Unsupported data_split! Data_split must be one of {('TRAIN', 'DEV', 'TEST')}")
@@ -41,7 +42,8 @@ os.makedirs(result_root_dir, exist_ok=True)
 
 generalizability_settings = [
     {'DATASET': 'BIRD', 'DATA_SPLIT': 'TRAIN'},
-    {'DATASET': 'SPIDER', 'DATA_SPLIT': 'TEST'}
+    {'DATASET': 'SCIENCE_BENCHMARK', 'DATA_SPLIT': 'DEV'},
+    {'DATASET': 'SPIDER', 'DATA_SPLIT': 'TEST'},
 ]
 
 generalizability_test = any(

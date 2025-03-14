@@ -14,6 +14,7 @@ import json
 from MapleRepair.config import dataset
 from MapleRepair.dataset_utils.bird import Bird_Initializer
 from MapleRepair.dataset_utils.spider import Spider_Initalizer
+from MapleRepair.dataset_utils.science_benchmark import Sciencebenchmark_Initalizer
 
 from MapleRepair.config import *
 from MapleRepair.utils.nlp import is_date, is_time, is_number
@@ -28,11 +29,14 @@ from concurrent.futures import as_completed
 import base64
 
 def encode_string(input_string):
+    # 将字符串转换为字节
     byte_string = input_string.encode('utf-8')
+    # 使用base64编码
     encoded_string = base64.urlsafe_b64encode(byte_string).decode('utf-8')
     return encoded_string
 
 def decode_string(encoded_string):
+    # 将base64编码的字符串解码回原字符串
     byte_string = base64.urlsafe_b64decode(encoded_string.encode('utf-8'))
     return byte_string.decode('utf-8')
 
@@ -579,6 +583,8 @@ class Database():
         
         if self.dataset == 'BIRD':
             self.schema, self.pkfk = Bird_Initializer(db_id).do_init()
+        elif self.dataset == 'SCIENCE_BENCHMARK':
+            self.schema, self.pkfk = Sciencebenchmark_Initalizer(db_id).do_init()
         elif self.dataset == 'SPIDER':
             self.schema, self.pkfk = Spider_Initalizer(db_id).do_init()
         else:
@@ -799,7 +805,7 @@ class Database():
         
         return res
     
-    @func_set_timeout(60)
+    @func_set_timeout(120)
     def _execute_query(self, query:str, fetch: Optional[Union[str, int]] = "all") -> Optional[List]:
         with sqlite3.connect(self.db_path, isolation_level=None) as conn:
             conn.text_factory = lambda b: b.decode(errors="ignore")  # avoid gbk/utf8 error, copied from sql-eval.exec_eval
@@ -1251,7 +1257,7 @@ def init_DBs(db_list:List[str]=None):
         if not parallel_init:
             DBs[name] = partial_init_database(name)
             db:Database = DBs[name]
-            DBs[name].schema_prompt, DBs[name].fk_prompt = init_db_schema_prompt(dataset_name=db.dataset, db_path=db.db_path, db_id=name)
+            DBs[name].schema_prompt, DBs[name].fk_prompt = init_db_schema_prompt(_dataset=db.dataset, db_path=db.db_path, db_id=name)
         else:
             db:Database = DBs[name]
         db.init_vecDB()

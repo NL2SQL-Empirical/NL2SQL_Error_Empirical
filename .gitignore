@@ -10,6 +10,8 @@ data/chapter5/generalizability/BIRD Sampled_train/*
 !data/chapter5/generalizability/BIRD Sampled_train/.gitkeep
 data/chapter5/generalizability/SPIDER Sampled_test/*
 !data/chapter5/generalizability/SPIDER Sampled_test/.gitkeep
+data/chapter5/generalizability/SCIBENCH dev+seed/*
+!data/chapter5/generalizability/SCIBENCH dev+seed/.gitkeep
 sankey/images/*
 sankey/sankey_metadata.json
 !sankey/images/.gitkeep
